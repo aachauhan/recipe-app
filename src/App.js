@@ -34,14 +34,16 @@ const App = () =>{
 
   return(
     <div className="App">
+      {/* Search form that runs get search */}
       <form onSubmit={getSearch} className="search-form">
         <input className="search-box" type="text" value={search} onChange={updateSearch} />
         <button className="search-button" type="submit">Recipe Search</button>
       </form>
+      {/* Recipe module lives in following div */}
       <div className="recipes">
         {recipes.map(recipe => (
           <Recipe 
-            key={recipe.recipe.label}
+            key={recipe.recipe.label} // this key can be improved to something more random (generator)
             title={recipe.recipe.label} 
             calories={recipe.recipe.calories}
             image={recipe.recipe.image}
